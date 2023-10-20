@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable> <!-- Indicates that the project can be packed -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild> <!-- Creates a NuGet package on build -->
+  </PropertyGroup>
+
+<PropertyGroup>
+  <!-- Essential Metadata for NuGet -->
+  <PackageId>ProactiveCaching</PackageId>
+  <Version>1.0.0</Version>
+  <Authors>Ralph Purtscher-Wydenbruck</Authors>
+  <Description>A cache with non-blocking periodic (i.e. proactive) automated refresh attempts, resulting in high availibilty and low latency.</Description>
+  <Copyright>Copyright © Ralph Purtscher-Wydenbruck 2023</Copyright>
+  <PackageLicenseExpression>MIT</PackageLicenseExpression> <!-- or whichever license you choose -->
+  <PackageProjectUrl>https://github.com/ralphpw/ProactiveCaching</PackageProjectUrl>
+  <RepositoryUrl>https://github.com/ralphpw/ProactiveCaching</RepositoryUrl>
+  <RepositoryType>git</RepositoryType>
+  <PackageTags>cache caching proactive</PackageTags>
+
+  <!-- Optional NuGet Metadata -->
+  <PackageReleaseNotes>Initial release of ProactiveCaching.</PackageReleaseNotes>
+  <PackageIconUrl />
+</PropertyGroup>
+
+</Project>

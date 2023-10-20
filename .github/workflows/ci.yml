@@ -1,0 +1,41 @@
+name: CI to NuGet (Build, Test, and Package)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-test-and-package:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0.203'
+
+    - name: Build solution
+      run: dotnet build --configuration Release
+
+    - name: Run unit tests
+      run: dotnet test UnitTests/ProactiveCaching.Tests.csproj --verbosity normal
+
+    - name: Package library
+      run: dotnet pack --configuration Release --output nupkgs --include-symbols /p:SymbolPackageFormat=snupkg
+
+    - name: Push NuGet package
+      uses: brandedoutcast/publish-nuget@v2.5.5
+      with:
+        PROJECT_FILE_PATH: ProactiveCaching/ProactiveCaching.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        PACKAGE_NAME: ProactiveCaching
+
+    - name: Publish artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: artifacts
+        path: nupkgs/*
