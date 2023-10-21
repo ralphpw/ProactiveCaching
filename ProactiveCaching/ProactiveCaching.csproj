@@ -10,8 +10,8 @@
 
 <PropertyGroup>
   <!-- Essential Metadata for NuGet -->
+  <Version>1.0.1</Version>
   <PackageId>ProactiveCaching</PackageId>
-  <Version>1.0.0</Version>
   <Authors>Ralph Purtscher-Wydenbruck</Authors>
   <Description>A cache with non-blocking periodic (i.e. proactive) automated refresh attempts, resulting in high availibilty and low latency.</Description>
   <Copyright>Copyright © Ralph Purtscher-Wydenbruck 2023</Copyright>
@@ -24,6 +24,12 @@
   <!-- Optional NuGet Metadata -->
   <PackageReleaseNotes>Initial release of ProactiveCaching.</PackageReleaseNotes>
   <PackageIconUrl />
+  <PackageReadmeFile>README - NuGet Package.md</PackageReadmeFile>
+  <IncludeSymbols>true</IncludeSymbols>
+  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 </PropertyGroup>
 
+<ItemGroup>
+  <None Include="..\README - NuGet Package.md" Pack="true" PackagePath="" />
+</ItemGroup>
 </Project>

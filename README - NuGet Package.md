@@ -1,4 +1,4 @@
-<!-- This README is specifically for GitHub. -->
+<!-- This README is specifically for the NuGet package. -->
 # ProactiveCaching
 
 `ProactiveCaching` is a .NET library designed to provide proactive caching functionality. Its core philosophy is to prioritize user experience by ensuring data is always available instantly, with no wait time. Based on 7.0 / .NET Standard.
@@ -43,13 +43,9 @@ Leverage `ProactiveCaching` to optimize your applications by always having fresh
    var data = await proactiveCache.GetDataAsync();
    ```
 
-## Advanced Usage
-
-Refer to the provided tests in the `ProactiveCaching.Tests` project for more advanced use-cases and examples.
-
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+This project can be found on GitHub.
 
 Please ensure to update tests as appropriate.
 
